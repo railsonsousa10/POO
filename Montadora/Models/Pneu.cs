@@ -1,9 +1,11 @@
-﻿using System.Security.Principal;
-
-namespace Models
+﻿namespace Models
 {
     public class Pneu
     {
+        private int v1;
+        private int v2;
+        private string v3;
+
         public string? Cor { get; set; }
         public int Aro { get; set; }
         public string? Tipo{ get; set; }
@@ -28,6 +30,13 @@ namespace Models
             PercentualBorracha = 100; 
         }
 
+        public Pneu(int v1, int v2, string v3)
+        {
+            this.v1 = v1;
+            this.v2 = v2;
+            this.v3 = v3;
+        }
+
         public void Girar(int _velocidade)
         {
             VelocidadeAtual = VelocidadeAtual + _velocidade;
@@ -43,9 +52,9 @@ namespace Models
             Estourado = true;
             VelocidadeAtual = 0;
         }
-        public void Freiar(int _reducao)
+        public void Freiar(int _reduzi)
         {
-            VelocidadeAtual = VelocidadeAtual - _reducao;
+            VelocidadeAtual = VelocidadeAtual - _reduzi;
             PercentualBorracha = PercentualBorracha - 5;
 
             if (VelocidadeAtual <= 30)

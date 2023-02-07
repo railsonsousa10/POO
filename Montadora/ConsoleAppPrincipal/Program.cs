@@ -10,17 +10,14 @@ namespace ConsoleAppPrincipal
           
             Pneu pneu2 = new Pneu(16, 70, "Pneu de estepe", true);
            
-          
-            pneu1.Girar(6);
-            pneu2.Girar(6);
-            pneu2.Girar(15);
-            pneu2.Girar(10);
-            pneu2.Freiar(5);
-            pneu2.Girar(6);
-            pneu2.Girar(50);
-            pneu1.Exibir();
-            Console.WriteLine();
-            pneu1.Exibir();
+            Carro fusca = new Carro("VolksEagen", "Itamar Franco", 1994, 120, "");
+
+            fusca.Abastecer(80);
+            fusca.Ligar();
+            fusca.Acelerar(15, fusca.GetPercentualCobustivel());
+            fusca.Acelerar(10, fusca.GetPercentualCobustivel());
+            fusca.Acelerar(15, fusca.GetPercentualCobustivel());
+            fusca.Exibir();
         }
     }
 }
